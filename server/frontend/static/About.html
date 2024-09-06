@@ -11,92 +11,100 @@
       }
       .img-container img {
         background-color: #e6e6e6;
-        border: 4px solid #fff;
-        width: 100%;
-        height: 100%;
+        border: 2px solid #fff;
+        width: 256px;
+        height: auto;
+      }
+      .card-body .title,
+      .card-body .person-name {
+        color: #e6e6e6;
+        font-weight: 700;
+      }
+      .card-body {
+        border-top: 1px solid darkturquoise;
+        color: #fff;
+      }
+      .email {
+        color: ff7f36;
       }
     </style>
 </head>
 <body>
-<div>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
-    <div class="container-fluid">
-      <h2 style="padding-right: 5%;">Dealerships</h2>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" style="font-size: larger;" href="/about">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-    <div class="card d-flex flex-column align-items-center" style="width: 80%;margin: auto; margin-top:5%;">
-      <div class="banner" name="about-header">
-        <h1 class="text-center">About Us</h1>
-        <p class="text-center pt-1 pb-3">
-          Welcome to Best Cars dealership, home to the best cars in North America. We deal in sale of domestic and imported cars at reasonable prices.
-        </p>
-      </div>
-      <div class="d-flex" style="margin:auto">
-      <div class="card" style="width: 30%;">
-        <div class="img-container p-2">
-          <img class="card-img-top" src="/static/alien.png" alt="Card image">
+  <div>
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+        <div class="container-fluid">
+          <h2 style="padding-right: 5%;">Dealerships</h2>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" style="font-size: larger;" href="/about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="card-body">
-          <p class="title">CEO</p>
-          <p>Alien</p>
-          <p class="card-text">
-            Alien steers the business towards success with strategic leadership,
-            cultivating a customer-centric environment for automotive excellence across the milky way.
-          </p>
-          <p>alien@example.com</p>
-        </div>
-      </div>
-      <div class="card" style="width: 30%;">
-        <div class="img-container">
-          <img class="card-img-top" src="./ghost-woman.png" alt="Card image">
-        </div>
-        <div class="card-body">
-          <p class="title">CMO</p>
-          <p>Samara</p>
-          <p class="card-text">
-            Samara orchestrates innovative marketing campaigns, driving brand visibility, and sharing the companies fulfillment through modern video platforms.
-          </p>
-          <p>samara@example.com</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 30%;">
-        <div class="img-container">
-          <img class="card-img-top" src="/static/horror.png" alt="Card image">
-        </div>
-        <div class="card-body">
-          <p class="title">CFO</p>
-          <p>Grimm</p>
-          <p class="card-text">
-            Grimm oversees the financial health of the company,
-            levaraging financial strategies to optimize resources and ensure finacial responsibility
-            for sustained growth.
-          </p>
-          <p>grimm@example.com</p>
-        </div>
-      </div>
-    </div>
-    </div>
-    </div>
-    
-</div>
+      </nav>
+      <div class="card d-flex flex-column align-items-center" style="width: 80%;margin: auto; margin-top:5%;">
+          <div class="banner" name="about-header">
+            <h1 class="text-center">About Us</h1>
+            <p class="text-center pt-1 pb-3">
+              Welcome to Best Cars dealership, home to the best cars in North America. We deal in sale of domestic and imported cars at reasonable prices.
+            </p>
+          </div>
+          <div class="d-flex" style="margin:auto">
+            <div class="card p-1 ms-2 me-2" style="width: 30%;">
+              <div class="img-container p-2">
+                <img class="card-img-top" src="/static/alien.png" alt="Card image">
+              </div>
+              <div class="card-body">
+                <p class="title">CEO</p>
+                <p>Alien</p>
+                <p class="card-text">
+                  Alien steers the business towards success with strategic leadership,
+                  cultivating a customer-centric environment for automotive excellence across the milky way.
+                </p>
+                <p class="email">alien@example.com</p>
+              </div>
+            </div>
+            <div class="card p-1 ms-2 me-2" style="width: 30%;">
+              <div class="img-container">
+                <img class="card-img-top" src="./ghost-woman.png" alt="Card image">
+              </div>
+              <div class="card-body">
+                <p class="title">CMO</p>
+                <p>Samara</p>
+                <p class="card-text">
+                  Samara orchestrates innovative marketing campaigns, driving brand visibility, and sharing the companies fulfillment through modern video platforms.
+                </p>
+                <p class="email">samara@example.com</p>
+              </div>
+            </div>
+            <div class="card p-1 ms-2 me-2" style="width: 30%;">
+              <div class="img-container">
+                <img class="card-img-top" src="/static/horror.png" alt="Card image">
+              </div>
+              <div class="card-body ms-1 me-1">
+                <p class="title">CFO</p>
+                <p class="person-name">Grimm</p>
+                <p class="card-text">
+                  Grimm oversees the financial health of the company,
+                  levaraging financial strategies to optimize resources and ensure finacial responsibility
+                  for sustained growth.
+                </p>
+                <p class="email">grimm@example.com</p>
+              </div>
+            </div>
+        </div>  <!-- card-row container -->
+      </div>  <!-- about-us container -->
+    </div>  <!-- main-content container -->
 </body>
 
 </html>
