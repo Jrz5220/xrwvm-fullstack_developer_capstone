@@ -9,11 +9,28 @@
                 font-weight: 700;
                 top: 50%;
                 left: 50%;
+                text-shadow: 0 0 1rem #000;
                 transform: translateY(-50%) translateX(-50%);
             }
             img.dealership {
                 filter: brightness(40%);
                 width: 100%;
+            }
+            .img-container {
+                width: 20rem;
+                height: 20rem;
+                border-radius: 50%;
+            }
+            .img-container img {
+                width: 100%;
+                height: 100%;
+            }
+            .contact-detail p {
+                font-size: 1.4rem;
+                font-weight: 700;
+            }
+            .contact-detail address {
+                font-size: 1.2rem;
             }
         </style>
     </head>
@@ -27,13 +44,13 @@
               <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" style="font-size: larger;" href="/">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" style="font-size: larger;" href="/about">About Us</a>
+                    <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
+                    <a class="nav-link active" style="font-size: larger;" aria-current="page" href="/contact">Contact Us</a>
                   </li>
                 </ul>
               </div>
@@ -41,32 +58,32 @@
         </nav>
         <main>
             <header class="container-fluid position-relative p-0">
-                <img class="dealership" src="https://raw.githubusercontent.com/Jrz5220/xrwvm-fullstack_developer_capstone/main/server/frontend/static/dealership.jpg" alt="Dealership" />
+                <img class="dealership" src="https://raw.githubusercontent.com/Jrz5220/xrwvm-fullstack_developer_capstone/main/server/frontend/static/car_dealership.jpg" alt="Dealership" />
                 <h1 class="position-absolute">Contact Us</h1>
             </header>
-            <section class="d-flex">
-                <div>
+            <section class="d-flex justify-content-center p-5">
+                <div class="align-self-center me-5 img-container">
                     <img src="https://raw.githubusercontent.com/Jrz5220/xrwvm-fullstack_developer_capstone/main/server/frontend/static/contact-us.png" alt="Contact Us" />
                 </div>
-                <div class="contact-details">
-                    <div class="contact-detail customer-service">
-                        <p>Contact Customer Service</p>
+                <div class="contact-details ms-5">
+                    <div class="contact-detail customer-service text-primary pb-2">
+                        <p class="mb-0">Contact Customer Service</p>
                         <address>support@bestcars.com</address>
                     </div>
-                    <div class="contact-detail national-advertising">
-                        <p>Contact our National Advertising team</p>
+                    <div class="contact-detail national-advertising text-primary pb-2">
+                        <p class="mb-0">Contact our National Advertising team</p>
                         <address>NationalSales@bestcars.com</address>
                     </div>
-                    <div class="contact-detail public-relations">
-                        <p>Contact our Public Relations team</p>
+                    <div class="contact-detail public-relations text-primary pb-2">
+                        <p class="mb-0">Contact our Public Relations team</p>
                         <address>PR@bestcars.com</address>
                     </div>
-                    <div class="contact-detail offices">
-                        <p>Contact the bestcars.com offices</p>
+                    <div class="contact-detail offices text-primary pb-2">
+                        <p class="mb-0">Contact the bestcars.com offices</p>
                         <address>312-611-1111</address>
                     </div>
-                    <div class="contact-detail become-dealer">
-                        <p>Become a bestcars.com car dealer</p>
+                    <div class="contact-detail become-dealer text-primary pb-2">
+                        <p class="mb-0">Become a bestcars.com car dealer</p>
                         <address>Visit growwithbestcars.com</address>
                     </div>
                 </div>
