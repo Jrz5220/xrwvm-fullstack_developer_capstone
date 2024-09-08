@@ -1,3 +1,6 @@
+// schema for Reviews
+// used to serve data into MongoDB
+
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;

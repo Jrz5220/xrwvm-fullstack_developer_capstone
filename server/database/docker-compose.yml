@@ -1,5 +1,6 @@
 version: '3.9'
 
+# runs two containers, one for Mongo and one for the Node app
 services:
   # Mongodb service
   mongo_db:
