@@ -12,7 +12,7 @@ sentiment_analyzer_url = os.getenv(
 
 # Implement methods to access the services you created in /server/database/app.js
 
-# Add code for get requests to back end
+# Add code for get requests to back end (calls GET method in Python library requests)
 # endpoint - the endpoint to be requested
 # **kwargs - Python keyword argument representing all URL parameters to be associated with the get call
 def get_request(endpoint, **kwargs):
