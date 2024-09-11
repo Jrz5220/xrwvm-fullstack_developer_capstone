@@ -7,9 +7,11 @@ from . import views
 
 app_name = 'djangoapp'
 urlpatterns = [
-    # path to get list of cars
+    # path to get list of cars (requires you to create a root user with Django admin to populate cars table for your Django app)
+    # if you try to go to /get_cars without initializing root user to populate the cars table, you will get an error stating "no such table"
     path(route='get_cars', view=views.get_cars, name ='getcars'),
-    # # path for registration
+    
+    # path for registration
 
     # path for login
     path(route='login', view=views.login_user, name='login'),
@@ -21,6 +23,6 @@ urlpatterns = [
 
     # path for add a review view
     path(route='reviews/dealer/<int:dealer_id>', view=views.get_dealer_reviews, name='dealer_details'),
-        path(route='add_review', view=views.add_review, name='add_review'),
+    path(route='add_review', view=views.add_review, name='add_review'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
