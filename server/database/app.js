@@ -91,7 +91,6 @@ app.post('/insert_review', express.raw({ type: '*/*' }), async (req, res) => {
   data = JSON.parse(req.body);
   const documents = await Reviews.find().sort( { id: -1 } )
   let new_id = documents[0]['id']+1
-
   const review = new Reviews({
 		"id": new_id,
 		"name": data['name'],
@@ -103,7 +102,6 @@ app.post('/insert_review', express.raw({ type: '*/*' }), async (req, res) => {
 		"car_model": data['car_model'],
 		"car_year": data['car_year'],
 	});
-
   try {
     const savedReview = await review.save();
     res.json(savedReview);
