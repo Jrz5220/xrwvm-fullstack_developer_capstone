@@ -27,11 +27,9 @@ const Dealers = () => {
   }
 
   const get_dealers = async ()=>{
-    print(">>>>>>>>>>>> making request to get_dealers/ <<<<<<<<<<<")
     const res = await fetch(dealer_url, {
       method: "GET"
     });
-    print(">>>>>>>>>>>> response returned from get_dealers/ <<<<<<<<<<<")
     const retobj = await res.json();
     if(retobj.status === 200) {
       let all_dealers = Array.from(retobj.dealers)
