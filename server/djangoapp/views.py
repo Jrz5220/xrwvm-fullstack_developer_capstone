@@ -85,7 +85,6 @@ def get_dealerships(request, state="All"):
     else:
         endpoint = "/fetchDealers/"+state
     dealerships = get_request(endpoint)     # get_request implemented in restapis.py
-    print(">>>>>>>>>>>> djangoapp/views.py <<<<<<<<<<<")
     return JsonResponse({"status":200,"dealers":dealerships})
     # add the following to urls.py:
     # path(route='get_dealers', view=views.get_dealerships, name='get_dealers'),
