@@ -25,7 +25,6 @@ def get_request(endpoint, **kwargs):
     try:
         # Call GET method in requests library with URL and parameters, such as dealerId
         response = requests.get(request_url)
-        print(">>>>>>>>>>>> restapis.py get_request() <<<<<<<<<<<")
         return response.json()
     except:
         # If any error occurs
