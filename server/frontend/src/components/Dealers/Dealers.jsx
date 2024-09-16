@@ -49,10 +49,23 @@ const Dealers = () => {
 
 let isLoggedIn = sessionStorage.getItem("username") != null ? true : false;
 let numOfDealers = dealersList.length;
+  let dealer1 = dealersList[0];
+  let dealerkey0 = dealer1.keys()[0];
+  let dealerkey1 = dealer1.keys()[1];
+  let dealerval0 = dealer1.values()[0];
+  let dealerval1 = dealer1.values()[1];
 return(
   <div>
       <Header/>
       <h1>{numOfDealers} number of Dealers</h1>
+    <h3>Dealer key 0</h3>
+    <p>{dealerkey0}</p>
+    <h3>Dealer key 1</h3>
+    <p>{dealerkey1}</p>
+    <h3>Dealer value 0</h3>
+    <p>{dealerval0}</p>
+    <h3>Dealer value 1</h3>
+    <p>{dealerval1}</p>
      <table className='table'>
       <tr>
       <th>ID</th>
