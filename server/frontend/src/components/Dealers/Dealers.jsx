@@ -48,10 +48,11 @@ const Dealers = () => {
 
 
 let isLoggedIn = sessionStorage.getItem("username") != null ? true : false;
+let numOfDealers = dealersList.length;
 return(
   <div>
       <Header/>
-
+      <h1>{numOfDealers} number of Dealers</h1>
      <table className='table'>
       <tr>
       <th>ID</th>
