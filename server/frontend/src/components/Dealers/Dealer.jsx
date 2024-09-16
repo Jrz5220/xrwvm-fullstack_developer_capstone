@@ -90,20 +90,19 @@ return(
   <div style={{margin:"20px"}}>
       <Header/>
       <div style={{marginTop:"10px"}}>
-      <h1 style={{color:"grey"}}>Fix San Car Dealership {postReview}</h1>
-      <h4  style={{color:"grey"}}>San Francisco,9 Harper Circle, Zip - 94110, California </h4>
+      <h1 style={{color:"grey"}}>Regrant Car Dealership {postReview}</h1>
+      <h4  style={{color:"grey"}}>Baltimore,93 Golf Course Pass, Zip - 21203, Maryland </h4>
       </div>
       <div class="reviews_panel">
-      {reviews.length === 0 && unreviewed === false ? (
+      {true === false ? (
         <text>Loading Reviews....</text>
-      ):  unreviewed === true? <div>No reviews yet! </div> :
-      reviews.map(review => (
+      ):  false === true ? <div>No reviews yet! </div> :
         <div className='review_panel'>
-          <img src={senti_icon(review.sentiment)} className="emotion_icon" alt='Sentiment'/>
-          <div className='review'>{review.review}</div>
-          <div className="reviewer">{review.name} {review.car_make} {review.car_model} {review.car_year}</div>
+          <img src={senti_icon("positive")} className="emotion_icon" alt='Sentiment'/>
+          <div className='review'>Excellent dealership. Highly recommend</div>
+          <div className="reviewer">felix NISSAN XTRAIL 2023</div>
         </div>
-      ))}
+      }
     </div>  
   </div>
 )
