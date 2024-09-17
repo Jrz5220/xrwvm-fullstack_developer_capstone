@@ -1,3 +1,5 @@
+/*jshint esversion: 8 */
+
 // schema for Reviews
 // used to serve data into MongoDB
 
