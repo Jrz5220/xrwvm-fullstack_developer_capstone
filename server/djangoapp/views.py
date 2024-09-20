@@ -1,4 +1,4 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 # from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
 # from django.shortcuts import get_object_or_404, render, redirect
@@ -82,7 +82,7 @@ def registration(request):
         login(request, user)
         data = {"userName": username, "status": "Authenticated"}
         return JsonResponse(data)
-    else :
+    else:
         data = {"userName": username, "error": "Already Registered"}
         return JsonResponse(data)
 
@@ -98,7 +98,10 @@ def get_dealerships(request, state="All"):
     dealerships = get_request(endpoint)
     return JsonResponse({"status": 200, "dealers": dealerships})
     # add the following to urls.py:
-    # path(route='get_dealers', view=views.get_dealerships, name='get_dealers'),
+    # path(
+    #    route='get_dealers',
+    #    view=views.get_dealerships,
+    #    name='get_dealers'),
     # path(
     #    route='get_dealers/<str:state>',
     #    view=views.get_dealerships,
@@ -127,7 +130,9 @@ def get_dealer_reviews(request, dealer_id):
     #    view=views.get_dealer_reviews,
     #    name='dealer_details'),
 
-# Create a `get_dealer_details` view to render the dealer details using the dealer_id.
+
+# Create a `get_dealer_details` view to 
+# render the dealer details using the dealer_id.
 def get_dealer_details(request, dealer_id):
     if (dealer_id):
         endpoint = "/fetchDealer/" + str(dealer_id)
@@ -141,10 +146,11 @@ def get_dealer_details(request, dealer_id):
     #    view=views.get_dealer_details,
     #    name='dealer_details')
 
+
 # Create a `add_review` view to submit a review
 def add_review(request):
     # check if the user is authenticated
-    if (request.user.is_anonymous == False):
+    if request.user.is_anonymous is False:
         data = json.loads(request.body)
         try:
             response = post_review(data)
