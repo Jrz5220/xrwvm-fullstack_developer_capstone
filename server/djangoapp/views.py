@@ -115,11 +115,11 @@ def get_dealer_reviews(request, dealer_id):
         endpoint = "/fetchReviews/dealer/" + str(dealer_id)
         reviews = get_request(endpoint)
         for review_detail in reviews:
-            # use analyze_review_sentiments in restapis.py to consume the microservice and determine
-            # the sentiment of each of the reviews
+            # use analyze_review_sentiments in restapis.py to
+            # consume the microservice and determine the sentiment of each of the reviews
             response = analyze_review_sentiments(review_detail['review'])
             print(response)
-            # set the value in the review_detail dictionary which is returned as a Jsonreponse
+            # set the value in review_detail dictionary which is returned as a Jsonreponse
             review_detail['sentiment'] = response['sentiment']
         return JsonResponse({"status": 200, "reviews": reviews})
     else:
@@ -131,7 +131,7 @@ def get_dealer_reviews(request, dealer_id):
     #    name='dealer_details'),
 
 
-# Create a `get_dealer_details` view to 
+# Create a `get_dealer_details` view to
 # render the dealer details using the dealer_id.
 def get_dealer_details(request, dealer_id):
     if (dealer_id):
@@ -156,7 +156,12 @@ def add_review(request):
             response = post_review(data)
             return JsonResponse({"status": 200})
         except Exception:
-            return JsonResponse({"status": 401, "message": "Error in posting review"})
+            return JsonResponse(
+                {
+                    "status": 401,
+                     "message": "Error in posting review"
+                }
+            )
     else:
         return JsonResponse({"status": 403, "message": "Unauthorized"})
     # add the following to urls.py:
@@ -164,6 +169,7 @@ def add_review(request):
     #    route='add_review',
     #    view=views.add_review,
     #    name='add_review'),
+
 
 # Create view to get the list of cars
 def get_cars(request):
@@ -174,5 +180,10 @@ def get_cars(request):
     car_models = CarModel.objects.select_related('car_make')
     cars = []
     for car_model in car_models:
-        cars.append({"CarModel": car_model.name, "CarMake": car_model.car_make.name})
+        cars.append(
+            {
+                "CarModel": car_model.name,
+                "CarMake": car_model.car_make.name
+            }
+        )
     return JsonResponse({"CarModels": cars})
