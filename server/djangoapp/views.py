@@ -115,8 +115,9 @@ def get_dealer_reviews(request, dealer_id):
         endpoint = "/fetchReviews/dealer/" + str(dealer_id)
         reviews = get_request(endpoint)
         for review_detail in reviews:
-            # use analyze_review_sentiments in restapis.py to consume
-            # the microservice and determine the sentiment of each of the reviews
+            # analyze_review_sentiments - function in restapis.py to consume
+            # a microservice and determine the
+            # sentiment of each of the reviews
             response = analyze_review_sentiments(review_detail['review'])
             print(response)
             # set the value in review_detail dictionary
@@ -154,7 +155,7 @@ def add_review(request):
     if request.user.is_anonymous is False:
         data = json.loads(request.body)
         try:
-            response = post_review(data)
+            # response = post_review(data)
             return JsonResponse({"status": 200})
         except Exception:
             return JsonResponse(
