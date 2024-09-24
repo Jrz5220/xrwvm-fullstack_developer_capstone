@@ -7,7 +7,9 @@ kubectl get deployments
 kubectl delete deployment dealership
 ### Delete any existing dealership images
 ibmcloud cr images
+
 ibmcloud cr image-rm us.icr.io/<your sn labs namespace>/dealership:latest && docker rmi us.icr.io/<your sn labs namespace>/dealership:latest
+
 (to view your namespace, use: ibmcloud cr namespaces)
 
 ### Run the Mongo Express server (the backend service that communicates with MongoDB) in a separate terminal
