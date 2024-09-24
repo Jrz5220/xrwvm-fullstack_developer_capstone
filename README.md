@@ -24,7 +24,11 @@ Run the server (docker-compose.yml has been created to run two containers, one f
 
 ### Deploy the sentiment analyzer microservice on Code Engine and update the URL wherever required
 Start code engine by creating a project
-![IBM Cloud Code Engine](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-CD0321EN-Coursera/labs/v2/m3/images/code_engine_create.png)
+![Create IBM Cloud Code Engine project](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-CD0321EN-Coursera/labs/v2/m3/images/code_engine_create.png)
+
+![Wait for IBM Cloud Code Engine project to finish](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-CD0321EN-Coursera/labs/v2/m3/images/code_engine_prep.png)
+
+![Ready to use IBM Cloud Code Engine](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-CD0321EN-Coursera/labs/v2/m3/images/start_CE_CLI.png)
 
 
 # Models
