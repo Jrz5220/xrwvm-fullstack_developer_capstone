@@ -54,20 +54,21 @@ You need to build and start the Express server using the following Docker comman
 - docker build . -t nodeapp	(build the nodeapp)
 - docker-compose up		      (start the server)
 
-After the server starts, you can use the URL to send API request to MongoDB
-(URL configured in /server/djangoproj/settings.py, ALLOWED_HOSTS)
+After the server starts, you can use the URL to send API request to MongoDB (URL configured in /server/djangoproj/settings.py, ALLOWED_HOSTS)
+
 (the nodeapp connects to MongoDB using mongoose.connect() in /server/database/app.js)
 
-Setup Django environment (terminal):
-1. cd /home/project/xrwvm-fullstack_developer_capstone/server
-   pip install virtualenv
-	 virtualenv djangoenv
-	 source djangoenv/bin/activate
-2. install the required packages: python3 -m pip install -U -r requirements.txt
-3. perform models migration
-   python3 manage.py makemigrations
-	 python3 manage.py migrate
-	 python3 manage.py runserver
+1. Setup Django environment (terminal):
+	- cd /home/project/xrwvm-fullstack_developer_capstone/server
+ 	- pip install virtualenv
+	- virtualenv djangoenv
+   	- source djangoenv/bin/activate
+3. install the required packages
+	- python3 -m pip install -U -r requirements.txt
+4. perform models migration
+	- python3 manage.py makemigrations
+	- python3 manage.py migrate
+	- python3 manage.py runserver
 
 Connect your Express backend service to your Django App
 /djangoapp/restapis.py - contains the methods to make API calls from your Django app to your Express service to fetch data from MongoDB
@@ -85,3 +86,12 @@ Deploy the senti_analyzer:
 Paste this URL in djangoapp/.env in sentiment_analyzer_url (no / at end)
 
 In /djangoapp/views.py, configure get_dealerships() to use get_request you implemented in restapis.py, passing /fetchDealers
+
+## Build and push image to container registry
+1. export your SN Labs namespace and print it on the console as below
+	- MY_NAMESPACE=$(ibmcloud cr namespaces | grep sn-labs-)
+	- echo $MY_NAMESPACE
+2. Perform a docker build with the Dockerfile in the current directory (/server)
+	- docker build -t us.icr.io/$MY_NAMESPACE/dealership .
+3. push the image to the container registry
+	- docker push us.icr.io/$MY_NAMESPACE/dealership
