@@ -1,5 +1,14 @@
 # coding-project-template
 
+# Delete previously persisting sessions to avoid any errors while running in Skills Network Labs
+## Delete any existing dealership deployments
+kubectl get deployments
+kubectl delete deployment dealership
+## Delete any existing dealership images
+ibmcloud cr images
+ibmcloud cr image-rm us.icr.io/<your sn labs namespace>/dealership:latest && docker rmi us.icr.io/<your sn labs namespace>/dealership:latest
+(to view your namespace, use: ibmcloud cr namespaces)
+
 # Models
 - CarModel and CarMake are Django models residing in a SQLite repo
 - Dealer and Review models are used by the backend service for retrieving car dealers and reviews from a MongodDB database through API endpoints
