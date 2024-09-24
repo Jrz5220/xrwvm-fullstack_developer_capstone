@@ -30,6 +30,18 @@ Start code engine by creating a project
 
 ![Ready to use IBM Cloud Code Engine](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-CD0321EN-Coursera/labs/v2/m3/images/start_CE_CLI.png)
 
+### Perform the following in the Code Engine CLI
+1. Change to microservice directory
+	- cd xrwvm-fullstack_developer_capstone/server/djangoapp/microservices
+2. Run the following command to docker build the sentiment analyzer app
+	- docker build . -t us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
+3. Push the docker image by running the following command
+	- docker push us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
+4. Deploy the senti_analyzer application on code engine
+	- ibmcloud ce application create --name sentianalyzer --image us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer --registry-secret icr-secret --port 5000
+5. Connect to the URL that is generated to access the microservices and check if the deployment is successful
+6. Open djangoapp/.env and replace your code engine deployment url with the deployment URL you obtained above
+
 
 # Models
 - CarModel and CarMake are Django models residing in a SQLite repo
