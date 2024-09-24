@@ -1,6 +1,6 @@
 # coding-project-template
 
-# Before you Start
+# Before you start
 Before you start, delete previously persisting sessions to avoid any errors while running in Skills Network Labs
 ### Delete any existing dealership deployments
 kubectl get deployments
@@ -15,10 +15,16 @@ ibmcloud cr image-rm us.icr.io/<your sn labs namespace>/dealership:latest && doc
 ### Run the Mongo Express server (the backend service that communicates with MongoDB) in a separate terminal
 Change to the directory with the data files
 - cd /home/project/xrwvm-fullstack_developer_capstone/server/database
+
 Build the Docker app
 - docker build . -t nodeapp
+
 Run the server (docker-compose.yml has been created to run two containers, one for Mongo and the other for the Node app)
 - docker-compose up
+
+### Deploy the sentiment analyzer microservice on Code Engine and update the URL wherever required
+Start code engine by creating a project
+![IBM Cloud Code Engine](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-CD0321EN-Coursera/labs/v2/m3/images/code_engine_create.png)
 
 
 # Models
