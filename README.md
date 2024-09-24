@@ -1,13 +1,23 @@
 # coding-project-template
 
-# Delete previously persisting sessions to avoid any errors while running in Skills Network Labs
-## Delete any existing dealership deployments
+# Before you Start
+Before you start, delete previously persisting sessions to avoid any errors while running in Skills Network Labs
+### Delete any existing dealership deployments
 kubectl get deployments
 kubectl delete deployment dealership
-## Delete any existing dealership images
+### Delete any existing dealership images
 ibmcloud cr images
 ibmcloud cr image-rm us.icr.io/<your sn labs namespace>/dealership:latest && docker rmi us.icr.io/<your sn labs namespace>/dealership:latest
 (to view your namespace, use: ibmcloud cr namespaces)
+
+### Run the Mongo Express server (the backend service that communicates with MongoDB) in a separate terminal
+Change to the directory with the data files
+- cd /home/project/xrwvm-fullstack_developer_capstone/server/database
+Build the Docker app
+- docker build . -t nodeapp
+Run the server (docker-compose.yml has been created to run two containers, one for Mongo and the other for the Node app)
+- docker-compose up
+
 
 # Models
 - CarModel and CarMake are Django models residing in a SQLite repo
